@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 import os
 import numpy as np
-from scipy import misc,ndimage
+from scipy import misc,ndimage  # misc对图像进行操作，ndimage模块也提供了有关数学形态学的方法
 
 mnist = input_data.read_data_sets('./MNIST_data')
 
@@ -13,7 +13,7 @@ random_dim = 10
 epochs = 1000000
 
 def my_init(size):
-    return tf.random_uniform(size, -0.05, 0.05)
+    return tf.random_uniform(size, -0.05, 0.05)   # 生成size形状，最小值为-0。05，最大值为0。05
 
 D_W1 = tf.Variable(my_init([mnist_dim, 128]))
 D_b1 = tf.Variable(tf.zeros([128]))
